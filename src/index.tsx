@@ -13,7 +13,7 @@ interface IconDefinition {
 }
 
 interface IconDefinitions {
-  [key: string]: IconDefinition; 
+  [key: string]: IconDefinition;
 }
 
 interface IconSpec {
@@ -21,7 +21,7 @@ interface IconSpec {
   folder: string;
   fileExtensions: ReferenceToIconDefinition;
   fileNames: ReferenceToIconDefinition;
-  iconDefinitions: IconDefinitions
+  iconDefinitions: IconDefinitions;
 }
 
 const getExtension = (filename: string): string | undefined =>
@@ -50,12 +50,19 @@ interface SickFileIconProps {
 }
 
 export const SickFileIcon = ({ filename, isFolder }: SickFileIconProps) => {
-  const def = isFolder ? iconSpec.iconDefinitions[iconSpec.folder] : resolveIconDefinition(filename);
+  const def = isFolder
+    ? iconSpec.iconDefinitions[iconSpec.folder]
+    : resolveIconDefinition(filename);
   let char = def.fontCharacter;
-  if (char.startsWith("\\")) {
-    char = String.fromCharCode(parseInt(def.fontCharacter.replace("\\", ""), 16));
+  if (char.startsWith('\\')) {
+    char = String.fromCharCode(
+      parseInt(def.fontCharacter.replace('\\', ''), 16)
+    );
   }
   return (
-    <span style={{ fontFamily: def.fontId, color: def.fontColor}} dangerouslySetInnerHTML={{__html: char}}/>
+    <span
+      style={{ fontFamily: def.fontId, color: def.fontColor }}
+      dangerouslySetInnerHTML={{ __html: char }}
+    />
   );
 };
