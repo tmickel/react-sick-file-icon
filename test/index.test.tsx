@@ -5,7 +5,7 @@ import { SickFileIcon } from '../src';
 describe('it', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<SickFileIcon filename="test.rb" />, div);
+    ReactDOM.render(<SickFileIcon isFolder={false} filename="test.rb" />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
