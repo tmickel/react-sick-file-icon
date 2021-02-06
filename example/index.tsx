@@ -2,7 +2,7 @@ import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { SickFileIcon } from '../.';
-import '../icons.css';
+import '../src/icons.css';
 
 const App = () => {
   const [filename, setFilename] = React.useState('index.js');
