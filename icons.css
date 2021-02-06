@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'devopicons';
+  src: local('file-icons'), url(./icons/devopicons.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'file-icons';
+  src: local('file-icons'), url(./icons/file-icons.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'fontawesome';
+  src: local('file-icons'), url(./icons/fontawesome.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'mfixx';
+  src: local('file-icons'), url(./icons/mfixx.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'octicons';
+  src: local('file-icons'), url(./icons/octicons.woff2) format('woff2');
+}
