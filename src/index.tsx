@@ -28,16 +28,22 @@ const getExtension = (filename: string): string | undefined =>
   filename.split('.').pop();
 
 const resolveIconDefinition = (filename: string): IconDefinition => {
-  const definition = iconSpec.fileNames[filename];
-  if (definition !== undefined) {
-    return iconSpec.iconDefinitions[definition];
+  const definitionId = iconSpec.fileNames[filename];
+  if (definitionId !== undefined) {
+    const result = iconSpec.iconDefinitions[definitionId];
+    if (result !== undefined) {
+      return result;
+    }
   }
 
   const extension = getExtension(filename);
   if (extension !== undefined) {
-    const definition = iconSpec.fileExtensions[extension];
-    if (definition) {
-      return iconSpec.iconDefinitions[definition];
+    const definitionId = iconSpec.fileExtensions[extension];
+    if (definitionId !== undefined) {
+      const result = iconSpec.iconDefinitions[definitionId];
+      if (result !== undefined) {
+        return result;
+      }
     }
   }
 
