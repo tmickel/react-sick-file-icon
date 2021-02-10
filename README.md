@@ -9,15 +9,15 @@ The icon is automatically determined based on the filename. Do not include path 
 Currently, only light mode is supported. Folder icons are not supported, except the default "boring" one.
 
 To change the size of the icon, apply a font-size CSS.
+
 ## Install
 
-I didn't publish this on npm yet, so:
-
 ```bash
-npm install --save git+https://github.com/tmickel/react-sick-file-icon.git
+npm install --save react-sick-file-icon
 ```
 
 Your bundler must support CSS and woff2 files. In esbuild, this means:
+
 ```bash
 npx esbuild ... --bundle --loader:.woff2=file ...
 ```
